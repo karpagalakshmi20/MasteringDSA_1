@@ -2,11 +2,21 @@ import java.util.Scanner;
 
 public class ReverseArrayAndPalindromeCheck{
     public static void ReverseArr(int[] arr){
-
-        System.out.println("The reverse of the array is as follows:");
-        for(int i=arr.length-1; i>=0; i--){
-            System.out.println(arr[i]+" ");
+        int[] newarr = new int[arr.length];
+        int newind = arr.length - 1, oldind = 0;
+        while(newind>=0){
+            newarr[newind--] = arr[oldind++];
         }
+        printarr(newarr);
+    }
+
+    public static void printarr(int[] newarr){
+        System.out.println("The reverse of the array is as follows:");
+        System.out.print("[ ");
+        for(int i=0; i<newarr.length; i++){
+            System.out.print(newarr[i] + " ");
+        }
+        System.out.println("]");
     }
     public static void PalindromeCheck(int[] arr){
         int firstIndex = 0;
